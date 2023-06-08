@@ -1,0 +1,35 @@
+<div class="container">
+<div class="card mb-3">
+    <div class="card-header">
+      <h5 class="card-title">Add a new question</h5>
+    </div>
+    <div class="card-body">
+      <form #questionForm="ngForm" (ngSubmit)="addQuestion(questionForm)">
+        <div class="form-group">
+          <label for="question">Question:</label>
+          <input type="text" class="form-control" id="question" name="question" [(ngModel)]="newQuestion.question" required>
+        </div>
+        <div class="form-group" *ngFor="let choice of newQuestion.choices; let i = index;">
+          <label for="choice{{ i }}">choice {{ i + 1 }}:</label>
+          <div class="input-group">
+            <input type="text" class="form-control" id="choice{{ i }}" name="choice{{ i }}" [(ngModel)]="optionValues[i]">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="button" (click)="removeOption(i)" [disabled]="newQuestion.choices.length <= 2">-</button>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-outline-secondary" type="button" (click)="addOption()">Add Option</button>
+        </div>        
+        <div class="form-group">
+            <label for="answerIndex">Correct Answer</label>
+            <input type="text" class="form-control" id="answerIndex" name="answerIndex" [(ngModel)]="newQuestion.answerIndex">
+           
+          </div>
+        <button type="submit" class="btn btn-primary">Save Question</button>
+      </form>
+    </div>
+  </div>
+  </div>
+  
+  

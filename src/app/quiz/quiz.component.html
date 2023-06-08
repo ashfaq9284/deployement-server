@@ -1,0 +1,22 @@
+<div class = "container">
+    <div *ngFor = "let question of questions; let i=index" class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">{{ question.question }}</h5>
+          <div *ngFor="let choice of question.choices; let j=index" class="form-check ">
+            <input class="form-check-input" type="radio" 
+            name="choice" id="choice{{ j }}" 
+            [value]="choice"  [(ngModel)]="selectedOption">
+            <label class="form-check-label" for="option{{ j }}">
+              {{ choice }}
+            </label>
+          </div>
+          <button class="btn btn-primary" (click)="getSelectedOptionIndex(i,question)" [disabled] = "selectedQuestion===question || isAnswered(i)">Check Answer</button>
+          <div *ngIf="selectedQuestion===question || isAnswered(i)">
+            <div [ngClass] = "isCorrect1(i)?'correct':'wrong'">{{answerResult[i]}}</div>
+         </div>
+        </div>
+        </div>
+        <button class="btn btn-primary mt-5 mb-3" (click)="getResult()" [disabled] = "!isAllQuestionAnswered()">Check Result</button>
+        <div *ngIf = "viewResult">{{numberOfCorrectAnswers}}</div>
+      </div>
+    

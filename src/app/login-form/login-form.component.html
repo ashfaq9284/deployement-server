@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row justify-content-center align-items-center g-2">
+      <div class="col-4">
+        <h2>Login Page</h2>
+      </div>
+    </div>
+    <div class="row justify-content-center align-items-center g-2">
+      <div class="col-4">
+        <form #loginForm="ngForm" class="border border-primary p-2 mb-2"
+        (ngSubmit) = "onSubmit()">
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email"
+              [(ngModel)]="user.email" #email="ngModel" required>
+          </div>
+          <div *ngIf="loginForm.submitted && email.errors">
+             <p *ngIf = "email.errors && email.errors['required']">Email is required</p>
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password"
+              [(ngModel)] = "user.password" #password = "ngModel" required>
+          </div>
+          <div *ngIf="loginForm.submitted && password.errors">
+             <p *ngIf = "password.errors && password.errors['required']">Password is required</p>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <div *ngIf="isValid">Div is Valid</div>
+      </div>
+    </div>
+  </div>

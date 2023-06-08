@@ -1,0 +1,82 @@
+[
+  {
+    "question": "What is the capital of France?",
+    "choices": [
+      "London",
+      "Paris",
+      "New York",
+      "Tokyo"
+    ],
+    "answerIndex": "Paris"
+  },
+  {
+    "question": "What is the largest planet in our solar system?",
+    "choices": [
+      "Mars",
+      "Jupiter",
+      "Venus",
+      "Saturn"
+    ],
+    "answerIndex": "Jupiter"
+  },
+  {
+    "question": "What is the currency of Japan?",
+    "choices": [
+      "Dollar",
+      "Yen",
+      "Euro",
+      "Pound"
+    ],
+    "answerIndex": "Yen"
+  },
+  {
+    "question": "What is the tallest mammal?",
+    "choices": [
+      "Giraffe",
+      "Elephant",
+      "Hippopotamus",
+      "Rhino"
+    ],
+    "answerIndex": "Giraffe"
+  },
+  {
+    "question": "QER",
+    "choices": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "answerIndex": "a"
+  },
+  {
+    "question": "asr",
+    "choices": [
+      "a1",
+      "b1",
+      "c1",
+      "d1"
+    ],
+    "answerIndex": "b1"
+  },
+  {
+    "question": "What is the smallest country in the world?",
+    "choices": [
+      "Monaco",
+      "Nauru",
+      "Tuvalu",
+      "Vatican City"
+    ],
+    "answerIndex": "Vatican City"
+  },
+  {
+    "question": "What is the most popular front end framework",
+    "choices": [
+      "Angular",
+      "React",
+      "Vue",
+      "Flutter"
+    ],
+    "answerIndex": "Angular"
+  }
+]

@@ -1,0 +1,47 @@
+<p>registration-form works!</p>
+<div class="container">
+
+    <form [formGroup] = "RegistrationForm" (ngSubmit) = "submi()">
+        First Name: <input type="text" name="firstName" class="form-control"
+        formControlName = "firstName">
+
+        <div *ngIf = "f['firstName'].touched && f['firstName'].invalid">
+            <div *ngIf = "f['firstName'].errors && f['firstName'].errors['required']">
+                FirstName is required
+            </div>
+
+            <div *ngIf = "f['firstName'].errors && f['firstName'].errors['minlength']">
+                FirstName should be minimum 3 characters long
+            </div>
+        </div>
+
+
+        Last Name: <input type="text" name="lastName" class="form-control"
+        formControlName = "lastName">
+
+        Email: <input type="email" name="email" class="form-control"
+        formControlName = "email">
+
+        <div *ngIf = "f['email'].touched && f['email'].invalid">
+            <div *ngIf = "f['email'].errors && f['email'].errors['required']">
+                Email is required
+            </div>
+
+            <div *ngIf = "f['email'].errors && f['email'].errors['pattern']">
+                Invalid email format
+            </div>
+
+            <div *ngIf = "f['email'].errors && f['email'].errors['emailDomain']">
+                Email must be on gmail.com domain
+            </div>
+        </div>
+
+        Password: <input type="password" name="password" class="form-control"
+        formControlName = "password">
+
+        <button class="btn btn-primary" type="submit" [disabled] = "RegistrationForm.invalid">Submit</button>
+
+
+
+    </form>
+</div>
